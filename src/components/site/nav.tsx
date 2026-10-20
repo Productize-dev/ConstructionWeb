@@ -2,10 +2,10 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 const links = [
-  { label: "Residential", href: "#residential" },
-  { label: "Commercial", href: "#commercial" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "About", href: "#about" },
+  { label: "Residential", href: "/#residential" },
+  { label: "Commercial", href: "/#commercial" },
+  { label: "Portfolio", href: "/portfolio" },
+  { label: "About", href: "/#about" },
 ];
 
 export function Nav() {
@@ -44,7 +44,7 @@ export function Nav() {
             variant="primary"
             className="!rounded-md !px-5 !py-2.5 !text-[12px] !normal-case !tracking-normal"
           >
-            <a href="#quote">Get a quote</a>
+            <a href="/#quote">Get a quote</a>
           </Button>
         </div>
       </div>

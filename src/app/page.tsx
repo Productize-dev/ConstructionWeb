@@ -1,34 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Nav } from "@/components/site/nav";
 import { Footer } from "@/components/site/footer";
 import { Hero } from "@/components/site/hero";
 import { Reveal } from "@/components/site/reveal";
 import { Button } from "@/components/ui/button";
-
-const portfolio = [
-  { src: "/images/portfolio-1.jpg", name: "3990", place: "Winston-Salem, NC" },
-  { src: "/images/portfolio-2.jpg", name: "4614", place: "Winston-Salem, NC" },
-  {
-    src: "/images/portfolio-3.jpg",
-    name: "Sun Meadows Dr",
-    place: "Winston-Salem, NC",
-  },
-  {
-    src: "/images/portfolio-4.jpg",
-    name: "Fairway Run Dr",
-    place: "Clemmons, NC",
-  },
-  {
-    src: "/images/portfolio-5.jpg",
-    name: "Fairway Run Dr",
-    place: "Clemmons, NC",
-  },
-  {
-    src: "/images/portfolio-6.jpg",
-    name: "Fairway Run Dr",
-    place: "Clemmons, NC",
-  },
-];
+import { featuredProjects } from "@/lib/projects";
 
 const services = [
   {
@@ -173,16 +150,16 @@ export default function HomePage() {
             </Reveal>
             <Reveal delay={100}>
               <Button asChild variant="outline">
-                <a href="#quote">Discuss a project</a>
+                <Link href="/portfolio">View full portfolio</Link>
               </Button>
             </Reveal>
           </div>
 
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {portfolio.map((p, i) => (
+            {featuredProjects.map((p, i) => (
               <Reveal key={p.src} delay={(i % 3) * 70}>
-                <a
-                  href="#quote"
+                <Link
+                  href="/portfolio"
                   className="group relative block aspect-[4/5] overflow-hidden bg-navy-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink"
                 >
                   <Image
@@ -201,7 +178,7 @@ export default function HomePage() {
                       {p.place}
                     </p>
                   </div>
-                </a>
+                </Link>
               </Reveal>
             ))}
           </div>

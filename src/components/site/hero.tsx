@@ -79,10 +79,10 @@ export function Hero() {
 
           <div className="mt-9 flex flex-wrap gap-3">
             <Button asChild variant="pink">
-              <a href="#quote">Request a quote</a>
+              <a href="/#quote">Request a quote</a>
             </Button>
             <Button asChild variant="outline">
-              <a href="#portfolio">View our work</a>
+              <a href="/portfolio">View our work</a>
             </Button>
           </div>
 
