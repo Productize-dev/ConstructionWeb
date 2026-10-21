@@ -5,7 +5,8 @@ import { Footer } from "@/components/site/footer";
 import { Hero } from "@/components/site/hero";
 import { Reveal } from "@/components/site/reveal";
 import { Button } from "@/components/ui/button";
-import { featuredProjects } from "@/lib/projects";
+import { projects } from "@/lib/projects";
+import { maplePhotos, mapleVideoId } from "@/lib/maple";
 
 const services = [
   {
@@ -17,15 +18,17 @@ const services = [
     img: "/images/residential-1.jpg",
     alt: "New construction home in a J&L Construction residential community",
     imageFirst: false,
+    href: "/residential/development",
   },
   {
     number: "02",
     eyebrow: "Residential construction",
     title: "Custom homes, built with discipline",
     copy: "Whether the project is contemporary or traditional, we stay accountable to budget and schedule — from first plans through finish work — so the house you move into matches the one you approved.",
-    img: "/images/hero-house.png",
-    alt: "Custom farmhouse built by J&L Construction",
+    img: "/images/maple/11.jpg",
+    alt: "Open living room and kitchen at 1348 Maple, built by J&L Construction",
     imageFirst: true,
+    href: "/residential/construction",
   },
   {
     id: "commercial",
@@ -36,6 +39,7 @@ const services = [
     img: "/images/commercial-dental.jpg",
     alt: "Commercial dental office built by J&L Construction",
     imageFirst: false,
+    href: "/commercial",
   },
 ];
 
@@ -128,7 +132,7 @@ export default function HomePage() {
               </p>
               <div className="mt-8">
                 <Button asChild variant="primary">
-                  <a href="#quote">Request a quote</a>
+                  <Link href={s.href}>Learn more</Link>
                 </Button>
               </div>
             </Reveal>
@@ -136,10 +140,77 @@ export default function HomePage() {
         </section>
       ))}
 
+      <section className="border-y border-line bg-paper">
+        <div className="container grid grid-cols-1 gap-8 py-12 lg:grid-cols-12 lg:gap-10 lg:py-16">
+          <Reveal className="lg:col-span-5">
+            <p className="text-[11px] font-semibold tracking-[0.18em] text-pink uppercase">
+              Luxury Homes Division
+            </p>
+            <h2 className="mt-3 text-[clamp(1.8rem,3vw,2.6rem)] leading-[1.1] font-semibold text-navy">
+              1348 Maple
+            </h2>
+            <p className="mt-4 max-w-md text-[15px] leading-relaxed text-ink-soft">
+              A finished custom home from the Luxury Homes Division: brick and
+              board-and-batten outside, open kitchen and living, a screened
+              porch, and field views from the bedrooms.
+            </p>
+            <dl className="mt-6 grid grid-cols-2 gap-px overflow-hidden border border-line bg-line sm:grid-cols-3">
+              {[
+                ["Division", "Luxury homes"],
+                ["Address", "1348 Maple"],
+                ["Garage", "Two-car"],
+              ].map(([label, value]) => (
+                <div key={label} className="bg-paper px-4 py-3">
+                  <dt className="text-[10px] font-semibold tracking-[0.14em] text-ink-soft uppercase">
+                    {label}
+                  </dt>
+                  <dd className="mt-1 text-sm font-semibold text-navy">{value}</dd>
+                </div>
+              ))}
+            </dl>
+            <div className="mt-6">
+              <Button asChild variant="primary">
+                <Link href="/portfolio/1348-maple">View the residence</Link>
+              </Button>
+            </div>
+          </Reveal>
+
+          <div className="lg:col-span-7">
+            <div className="relative aspect-video overflow-hidden bg-navy">
+              <iframe
+                src={`https://www.youtube-nocookie.com/embed/${mapleVideoId}`}
+                title="J&L Construction — video of the work"
+                className="absolute inset-0 h-full w-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+            <div className="mt-2 grid grid-cols-4 gap-2">
+              {maplePhotos.slice(0, 8).map((photo) => (
+                <Link
+                  key={photo.src}
+                  href="/portfolio/1348-maple"
+                  className="relative aspect-[4/3] overflow-hidden bg-navy-deep"
+                >
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    sizes="18vw"
+                    className="object-cover transition-transform duration-700 hover:scale-[1.04]"
+                  />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Portfolio */}
-      <section id="portfolio" className="bg-offwhite py-20 md:py-28">
+      <section id="portfolio" className="bg-offwhite py-14 md:py-20">
         <div className="container">
-          <div className="mb-12 flex flex-col gap-6 md:mb-16 md:flex-row md:items-end md:justify-between">
+          <div className="mb-8 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <Reveal className="max-w-xl">
               <p className="text-[11px] font-semibold tracking-[0.18em] text-pink uppercase">
                 Selected work
@@ -155,11 +226,11 @@ export default function HomePage() {
             </Reveal>
           </div>
 
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {featuredProjects.map((p, i) => (
-              <Reveal key={p.src} delay={(i % 3) * 70}>
+          <div className="grid grid-cols-2 gap-2 lg:grid-cols-4">
+            {projects.slice(0, 8).map((p, i) => (
+              <Reveal key={p.src} delay={(i % 4) * 50}>
                 <Link
-                  href="/portfolio"
+                  href={p.href ?? "/portfolio"}
                   className="group relative block aspect-[4/5] overflow-hidden bg-navy-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink"
                 >
                   <Image
@@ -196,8 +267,8 @@ export default function HomePage() {
               Tell us about the project. We&apos;ll follow up with next steps.
             </h2>
             <p className="mt-4 max-w-md text-[15px] leading-relaxed text-paper/65">
-              Residential or commercial — call or email and we&apos;ll respond
-              personally.
+              Residential or commercial — start with the questionnaire, or call
+              and we will walk you through it.
             </p>
           </Reveal>
 
@@ -206,14 +277,14 @@ export default function HomePage() {
             className="flex flex-col gap-3 sm:flex-row md:col-span-5 md:justify-end"
           >
             <Button asChild variant="pink" className="w-full sm:w-auto">
-              <a href="tel:3364791600">(336) 479-1600</a>
+              <Link href="/get-started">Get started</Link>
             </Button>
             <Button
               asChild
               variant="outline"
               className="w-full !border-paper/35 !text-paper hover:!border-paper hover:!bg-paper hover:!text-navy sm:w-auto"
             >
-              <a href="mailto:info@jandlinc.com">Email us</a>
+              <a href="tel:3364791600">(336) 479-1600</a>
             </Button>
           </Reveal>
         </div>

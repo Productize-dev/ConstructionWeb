@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Nav } from "@/components/site/nav";
 import { Footer } from "@/components/site/footer";
 import { Reveal } from "@/components/site/reveal";
@@ -54,14 +55,14 @@ export default function PortfolioPage() {
             className="flex flex-col gap-3 sm:flex-row md:col-span-5 md:justify-end"
           >
             <Button asChild variant="pink" className="w-full sm:w-auto">
-              <a href="tel:3364791600">(336) 479-1600</a>
+              <Link href="/get-started">Get started</Link>
             </Button>
             <Button
               asChild
               variant="outline"
               className="w-full !border-paper/35 !text-paper hover:!border-paper hover:!bg-paper hover:!text-navy sm:w-auto"
             >
-              <a href="/#quote">Request a quote</a>
+              <a href="tel:3364791600">(336) 479-1600</a>
             </Button>
           </Reveal>
         </div>

@@ -7,6 +7,21 @@ import { cn } from "@/lib/utils";
 
 const FEATURED = [
   {
+    src: "/images/maple/01.jpg",
+    label: "1348 Maple",
+    place: "Luxury Homes Division",
+  },
+  {
+    src: "/images/maple/07.jpg",
+    label: "1348 Maple",
+    place: "Kitchen and living",
+  },
+  {
+    src: "/images/maple/17.jpg",
+    label: "1348 Maple",
+    place: "Primary bath",
+  },
+  {
     src: "/images/hero-house.png",
     label: "Custom home",
     place: "Winston-Salem, NC",
@@ -79,7 +94,7 @@ export function Hero() {
 
           <div className="mt-9 flex flex-wrap gap-3">
             <Button asChild variant="pink">
-              <a href="/#quote">Request a quote</a>
+              <a href="/get-started">Get started</a>
             </Button>
             <Button asChild variant="outline">
               <a href="/portfolio">View our work</a>
@@ -173,12 +188,12 @@ export function Hero() {
             <div className="col-span-12 grid grid-cols-3 gap-3 sm:col-span-4 sm:grid-cols-1 sm:gap-4">
               {[
                 {
-                  src: "/images/portfolio-4.jpg",
-                  caption: "Clemmons, NC",
+                  src: "/images/maple/12.jpg",
+                  caption: "1348 Maple",
                 },
                 {
-                  src: "/images/hero-hidden-woods.jpg",
-                  caption: "Hidden Woods",
+                  src: "/images/maple/20.jpg",
+                  caption: "Screened porch",
                 },
                 {
                   src: "/images/commercial-dental.jpg",

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { Reveal } from "@/components/site/reveal";
 import { cn } from "@/lib/utils";
@@ -36,9 +37,9 @@ export function PortfolioGallery() {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {visible.map((project, i) => (
-          <Reveal key={project.src} delay={(i % 3) * 60}>
+      <div className="grid grid-cols-2 gap-2 md:grid-cols-3 xl:grid-cols-4">
+        {visible.map((project, i) => {
+          const card = (
             <article className="group relative aspect-[4/5] overflow-hidden bg-navy-deep">
               <Image
                 src={project.src}
@@ -60,8 +61,20 @@ export function PortfolioGallery() {
                 </p>
               </div>
             </article>
-          </Reveal>
-        ))}
+          );
+
+          return (
+            <Reveal key={project.src} delay={(i % 4) * 40}>
+              {project.href ? (
+                <Link href={project.href} className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink">
+                  {card}
+                </Link>
+              ) : (
+                card
+              )}
+            </Reveal>
+          );
+        })}
       </div>
     </div>
   );

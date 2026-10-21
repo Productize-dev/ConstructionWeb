@@ -5,9 +5,17 @@ export type Project = {
   name: string;
   place: string;
   category: ProjectCategory;
+  href?: string;
 };
 
 export const projects: Project[] = [
+  {
+    src: "/images/maple/01.jpg",
+    name: "1348 Maple",
+    place: "Luxury Homes Division",
+    category: "Residential",
+    href: "/portfolio/1348-maple",
+  },
   {
     src: "/images/hero-house.png",
     name: "Custom farmhouse",
