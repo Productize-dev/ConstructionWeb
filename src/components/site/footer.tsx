@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Logo } from "@/components/site/logo";
 
 const work = [
   { label: "Development", href: "/residential/development" },
@@ -19,9 +20,8 @@ export function Footer() {
     <footer className="bg-navy-deep text-paper">
       <div className="container grid grid-cols-1 gap-12 py-16 sm:grid-cols-2 md:grid-cols-4">
         <div>
-          <div className="text-lg font-semibold">
-            J&amp;L{" "}
-            <span className="font-normal text-paper/70">Construction</span>
+          <div className="inline-flex bg-paper px-2.5 py-2">
+            <Logo className="h-16 md:h-[4.5rem]" />
           </div>
           <p className="mt-4 max-w-[28ch] text-sm leading-relaxed text-paper/60">
             Licensed general contractor serving the North Carolina Piedmont

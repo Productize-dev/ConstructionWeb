@@ -12,6 +12,15 @@ export const metadata: Metadata = {
   title: "J&L Construction | Piedmont Triad General Contractor",
   description:
     "J&L Construction is a licensed general contractor building residential communities, custom homes, and commercial spaces across the North Carolina Piedmont Triad since 2014.",
+  manifest: "/site.webmanifest",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
 };
 
 export default function RootLayout({

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { ChevronDown, Menu, X } from "lucide-react";
+import { Logo } from "@/components/site/logo";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -90,10 +91,8 @@ export function Nav() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-paper/95 backdrop-blur">
-      <div className="container flex items-center justify-between py-4 md:py-5">
-        <Link href="/" className="text-lg font-semibold tracking-tight text-navy">
-          J&amp;L <span className="font-normal text-ink-soft">Construction</span>
-        </Link>
+      <div className="container flex items-center justify-between py-2.5 md:py-3">
+        <Logo priority />
 
         <nav className="hidden items-center gap-1 lg:flex">
           {menu.map((entry) => {
