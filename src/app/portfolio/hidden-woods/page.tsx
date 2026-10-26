@@ -15,13 +15,13 @@ import {
 export const metadata: Metadata = {
   title: "Hidden Woods Village | J&L Construction",
   description:
-    "Finished homes at Hidden Woods Village by J&L Construction: 221, 223, 224, and 229 Timber Hill Court, with construction videos and photography.",
+    "Finished homes at Hidden Woods Village by J&L Construction: 211, 223, 224, and 229 Timber Hill Court, with construction videos and photography.",
 };
 
 const facts = [
   { label: "Community", value: "Hidden Woods Village" },
   { label: "Street", value: "Timber Hill Court" },
-  { label: "Homes", value: "221 · 223 · 224 · 229" },
+  { label: "Homes", value: "211 · 223 · 224 · 229" },
   { label: "Videos", value: "Five videos" },
 ];
 
@@ -38,12 +38,13 @@ export default function HiddenWoodsPage() {
             <p className="text-[11px] font-semibold tracking-[0.18em] text-pink uppercase">
               Portfolio · Development
             </p>
-            <h1 className="mt-3 text-[clamp(2.4rem,5vw,4rem)] leading-[0.95] font-semibold tracking-tight text-navy">
+            <h1 className="mt-3 text-[clamp(2.4rem,5vw,4rem)] leading-[1.05] font-semibold text-navy">
               Hidden Woods Village
             </h1>
             <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-ink-soft">
-              Completed homes on Timber Hill Court.               Photography of 221, 223, 224, and 229, plus the modeling and
-              construction videos for the community.
+              Completed homes on Timber Hill Court. Photography of 211, 223,
+              224, and 229, plus the modeling and construction videos for the
+              community.
             </p>
           </div>
           <div className="flex flex-wrap gap-3 lg:col-span-5 lg:justify-end">
@@ -116,7 +117,7 @@ export default function HiddenWoodsPage() {
         </div>
       </section>
 
-      <section id="videos" className="border-y border-line bg-offwhite">
+      <section id="videos" className="scroll-mt-24 border-y border-line bg-offwhite">
         <div className="container py-12 md:py-16">
           <p className="text-[11px] font-semibold tracking-[0.18em] text-pink uppercase">
             Modeling and construction
@@ -136,7 +137,7 @@ export default function HiddenWoodsPage() {
           <section
             key={home.address}
             id={home.address}
-            className="border-b border-line bg-paper"
+            className="scroll-mt-24 border-b border-line bg-paper"
           >
             <div className="container py-10 md:py-14">
               <p className="text-[11px] font-semibold tracking-[0.18em] text-pink uppercase">

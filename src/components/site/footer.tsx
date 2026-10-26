@@ -25,8 +25,7 @@ export function Footer() {
             <Logo className="h-16 md:h-[4.5rem]" />
           </div>
           <p className="mt-4 max-w-[28ch] text-sm leading-relaxed text-paper/60">
-            Licensed general contractor serving the North Carolina Piedmont
-            Triad since 2014.
+            Serving the Piedmont Triad since 2014.
           </p>
         </div>
 

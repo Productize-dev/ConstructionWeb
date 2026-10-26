@@ -3,7 +3,7 @@
 
 @theme inline {
   --color-paper: #ffffff;
-  --color-offwhite: #f6f5f2;
+  --color-offwhite: #f3f4f6;
   --color-ink: #1b2430;
   --color-ink-soft: #5a6472;
   --color-navy: #0f2a4a;
@@ -11,12 +11,13 @@
   --color-pink: #ff2d87;
   --color-pink-deep: #c4166a;
   --color-pink-tint: #fdeaf3;
-  --color-line: #e7e5e0;
+  --color-line: #e4e6ea;
   --animate-fade-up: fade-up 0.8s ease-out forwards;
 }
 
 @theme {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-playfair), Georgia, serif;
 }
 
 @keyframes fade-up {
@@ -44,6 +45,14 @@
 
   body {
     @apply bg-paper text-ink font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-playfair), Georgia, serif;
+    letter-spacing: -0.02em;
   }
 
   ::selection {

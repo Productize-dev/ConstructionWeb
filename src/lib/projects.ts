@@ -86,8 +86,8 @@ export const projects: Project[] = [
   },
   {
     src: "/images/hero-hidden-woods.jpg",
-    name: "Hidden Woods Village",
-    place: "Piedmont Triad, NC",
+    name: "Site work",
+    place: "Hidden Woods Village",
     category: "Development",
     href: "/portfolio/hidden-woods",
   },

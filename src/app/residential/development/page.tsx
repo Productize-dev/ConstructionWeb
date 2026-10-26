@@ -95,7 +95,7 @@ export default function ResidentialDevelopmentPage() {
                 href="/portfolio/hidden-woods"
                 className="text-sm font-semibold text-navy hover:text-pink"
               >
-                See 221, 223, 224, and 229 Timber Hill Court
+                See 211, 223, 224, and 229 Timber Hill Court
               </Link>
             </p>
           </Reveal>

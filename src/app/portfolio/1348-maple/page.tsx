@@ -39,7 +39,7 @@ export default function MaplePage() {
             <p className="text-[11px] font-semibold tracking-[0.18em] text-pink uppercase">
               Portfolio · Luxury Homes Division
             </p>
-            <h1 className="mt-3 text-[clamp(2.4rem,5vw,4rem)] leading-[0.95] font-semibold tracking-tight text-navy">
+            <h1 className="mt-3 text-[clamp(2.4rem,5vw,4rem)] leading-[1.05] font-semibold text-navy">
               1348 Maple Chase Lane
             </h1>
             <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-ink-soft">

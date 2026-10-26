@@ -53,7 +53,7 @@ const menu: {
     items: [
       { label: "All projects", href: "/portfolio", note: "Residential, development, commercial" },
       { label: "1348 Maple Chase Lane", href: "/portfolio/1348-maple", note: "Brookberry" },
-      { label: "Hidden Woods Village", href: "/portfolio/hidden-woods", note: "221, 223, 224, 229 Timber Hill Court" },
+      { label: "Hidden Woods Village", href: "/portfolio/hidden-woods", note: "211, 223, 224, 229 Timber Hill Court" },
     ],
   },
   {
@@ -76,12 +76,14 @@ export function Nav() {
   const [open, setOpen] = useState<string | null>(null);
   const [mobile, setMobile] = useState(false);
   const [mobileSection, setMobileSection] = useState<string | null>(null);
+  const [menuPath, setMenuPath] = useState(pathname);
 
-  useEffect(() => {
+  if (menuPath !== pathname) {
+    setMenuPath(pathname);
     setOpen(null);
     setMobile(false);
     setMobileSection(null);
-  }, [pathname]);
+  }
 
   useEffect(() => {
     document.body.style.overflow = mobile ? "hidden" : "";

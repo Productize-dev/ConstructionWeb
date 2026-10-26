@@ -117,7 +117,7 @@ export default function HomePage() {
               delay={120}
             >
               <div className="mb-6 flex items-center gap-4">
-                <span className="font-mono text-[12px] tracking-[0.14em] text-pink">
+                <span className="text-[12px] font-semibold tracking-[0.14em] text-pink">
                   {s.number}
                 </span>
                 <span className="h-px w-10 bg-pink/70" />
@@ -225,7 +225,7 @@ export default function HomePage() {
             <dl className="mt-6 grid grid-cols-2 gap-px overflow-hidden border border-line bg-line">
               {[
                 ["Street", "Timber Hill Court"],
-                ["Homes", "221 · 223 · 224 · 229"],
+                ["Homes", "211 · 223 · 224 · 229"],
               ].map(([label, value]) => (
                 <div key={label} className="bg-offwhite px-4 py-3">
                   <dt className="text-[10px] font-semibold tracking-[0.14em] text-ink-soft uppercase">
