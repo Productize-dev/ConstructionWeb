@@ -5,7 +5,9 @@ import { Footer } from "@/components/site/footer";
 import { Hero } from "@/components/site/hero";
 import { Reveal } from "@/components/site/reveal";
 import { Button } from "@/components/ui/button";
+import { VideoGrid } from "@/components/site/video-grid";
 import { projects } from "@/lib/projects";
+import { hiddenWoodsHomes, hiddenWoodsVideos } from "@/lib/hidden-woods";
 import { maplePhotos, mapleVideoId } from "@/lib/maple";
 
 const services = [
@@ -147,7 +149,7 @@ export default function HomePage() {
               Luxury Homes Division
             </p>
             <h2 className="mt-3 text-[clamp(1.8rem,3vw,2.6rem)] leading-[1.1] font-semibold text-navy">
-              1348 Maple
+              1348 Maple Chase Lane
             </h2>
             <p className="mt-4 max-w-md text-[15px] leading-relaxed text-ink-soft">
               A finished custom home from the Luxury Homes Division: brick and
@@ -157,7 +159,7 @@ export default function HomePage() {
             <dl className="mt-6 grid grid-cols-2 gap-px overflow-hidden border border-line bg-line sm:grid-cols-3">
               {[
                 ["Division", "Luxury homes"],
-                ["Address", "1348 Maple"],
+                ["Community", "Brookberry"],
                 ["Garage", "Two-car"],
               ].map(([label, value]) => (
                 <div key={label} className="bg-paper px-4 py-3">
@@ -207,6 +209,65 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="border-b border-line bg-offwhite">
+        <div className="container grid grid-cols-1 gap-8 py-12 lg:grid-cols-12 lg:gap-10 lg:py-16">
+          <Reveal className="lg:col-span-5">
+            <p className="text-[11px] font-semibold tracking-[0.18em] text-pink uppercase">
+              Residential development
+            </p>
+            <h2 className="mt-3 text-[clamp(1.8rem,3vw,2.6rem)] leading-[1.1] font-semibold text-navy">
+              Hidden Woods Village
+            </h2>
+            <p className="mt-4 max-w-md text-[15px] leading-relaxed text-ink-soft">
+              Four finished homes on Timber Hill Court, with construction
+              videos and photography of each house.
+            </p>
+            <dl className="mt-6 grid grid-cols-2 gap-px overflow-hidden border border-line bg-line">
+              {[
+                ["Street", "Timber Hill Court"],
+                ["Homes", "221 · 223 · 224 · 229"],
+              ].map(([label, value]) => (
+                <div key={label} className="bg-offwhite px-4 py-3">
+                  <dt className="text-[10px] font-semibold tracking-[0.14em] text-ink-soft uppercase">
+                    {label}
+                  </dt>
+                  <dd className="mt-1 text-sm font-semibold text-navy">{value}</dd>
+                </div>
+              ))}
+            </dl>
+            <div className="mt-6">
+              <Button asChild variant="primary">
+                <Link href="/portfolio/hidden-woods">View the community</Link>
+              </Button>
+            </div>
+          </Reveal>
+
+          <div className="lg:col-span-7">
+            <VideoGrid videos={hiddenWoodsVideos} title="Hidden Woods Village" />
+            <div className="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-4">
+              {hiddenWoodsHomes.map((home) => (
+                <Link
+                  key={home.address}
+                  href={`/portfolio/hidden-woods#${home.address}`}
+                  className="group relative aspect-[4/3] overflow-hidden bg-navy-deep"
+                >
+                  <Image
+                    src={home.photos[0].src}
+                    alt={home.photos[0].alt}
+                    fill
+                    sizes="18vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  />
+                  <span className="absolute inset-x-0 bottom-0 bg-navy/80 px-2 py-1 text-[11px] font-semibold text-paper">
+                    {home.address}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Portfolio */}
       <section id="portfolio" className="bg-offwhite py-14 md:py-20">
         <div className="container">
@@ -227,7 +288,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-2 gap-2 lg:grid-cols-4">
-            {projects.slice(0, 8).map((p, i) => (
+            {projects.map((p, i) => (
               <Reveal key={p.src} delay={(i % 4) * 50}>
                 <Link
                   href={p.href ?? "/portfolio"}

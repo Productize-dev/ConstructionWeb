@@ -6,7 +6,8 @@ const work = [
   { label: "Custom homes", href: "/residential/construction" },
   { label: "Commercial", href: "/commercial" },
   { label: "Portfolio", href: "/portfolio" },
-  { label: "1348 Maple", href: "/portfolio/1348-maple" },
+  { label: "1348 Maple Chase", href: "/portfolio/1348-maple" },
+  { label: "Hidden Woods", href: "/portfolio/hidden-woods" },
 ];
 
 const company = [

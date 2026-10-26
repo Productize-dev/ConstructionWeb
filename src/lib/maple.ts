@@ -21,4 +21,26 @@ export const maplePhotos = [
   { src: "/images/maple/20.jpg", alt: "Screened porch at 1348 Maple" },
 ] as const;
 
-export const mapleVideoId = "kB4Ina5yfZI";
+export const mapleStagingPhotos = [
+  { src: "/images/maple/staging/01.jpg", alt: "Virtual staging of the study at 1348 Maple Chase Lane" },
+  { src: "/images/maple/staging/02.jpg", alt: "Virtual staging of the living room, dining area, and kitchen" },
+  { src: "/images/maple/staging/03.jpg", alt: "Virtual staging of the living room and linear fireplace" },
+  { src: "/images/maple/staging/04.jpg", alt: "Virtual staging of the living room looking toward the dining table" },
+  { src: "/images/maple/staging/05.jpg", alt: "Virtual staging of the dining area and field views" },
+  { src: "/images/maple/staging/06.jpg", alt: "Virtual staging from the dining table toward the kitchen and stair" },
+  { src: "/images/maple/staging/07.jpg", alt: "Virtual staging of the kitchen island and living room" },
+  { src: "/images/maple/staging/08.jpg", alt: "Virtual staging of the kitchen, range, and island" },
+  { src: "/images/maple/staging/09.jpg", alt: "Virtual staging of the kitchen island and stair" },
+  { src: "/images/maple/staging/10.jpg", alt: "Virtual staging of a bedroom with a tray ceiling and field view" },
+  { src: "/images/maple/staging/11.jpg", alt: "Virtual staging of a bedroom looking over the field" },
+  { src: "/images/maple/staging/12.jpg", alt: "Virtual staging of an upper living room" },
+  { src: "/images/maple/staging/13.jpg", alt: "Virtual staging of a carpeted bedroom" },
+  { src: "/images/maple/staging/14.jpg", alt: "Virtual staging of a bedroom opening to a closet" },
+] as const;
+
+export const mapleVideos = [
+  { id: "kB4Ina5yfZI", label: "Construction" },
+  { id: "wktx7xbQaIA", label: "Virtual staging" },
+] as const;
+
+export const mapleVideoId = mapleVideos[0].id;

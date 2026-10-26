@@ -8,46 +8,51 @@ import { cn } from "@/lib/utils";
 const FEATURED = [
   {
     src: "/images/maple/01.jpg",
-    label: "1348 Maple",
-    place: "Luxury Homes Division",
+    label: "1348 Maple Chase",
+    place: "Brookberry",
+  },
+  {
+    src: "/images/hidden-woods/223/01.jpg",
+    label: "Hidden Woods Village",
+    place: "223 Timber Hill Court",
   },
   {
     src: "/images/maple/07.jpg",
-    label: "1348 Maple",
+    label: "1348 Maple Chase",
     place: "Kitchen and living",
   },
   {
     src: "/images/maple/17.jpg",
-    label: "1348 Maple",
+    label: "1348 Maple Chase",
     place: "Primary bath",
   },
   {
-    src: "/images/hero-house.png",
+    src: "/images/hero-house.jpg",
     label: "Custom home",
     place: "Winston-Salem, NC",
   },
   {
-    src: "/images/residential-1.jpg",
-    label: "Residential development",
-    place: "Hidden Woods Village",
+    src: "/images/portfolio-2.jpg",
+    label: "4614",
+    place: "Winston-Salem, NC",
   },
   {
-    src: "/images/residential-2.jpg",
-    label: "Craftsman build",
+    src: "/images/residence-front.jpg",
+    label: "Completed residence",
     place: "Piedmont Triad",
   },
   {
-    src: "/images/portfolio-2.jpg",
-    label: "Completed residence",
-    place: "Winston-Salem, NC",
+    src: "/images/living-01.jpg",
+    label: "Living room",
+    place: "Piedmont Triad",
   },
 ];
 
 const THUMBS = [
   "/images/portfolio-1.jpg",
-  "/images/portfolio-3.jpg",
+  "/images/portfolio-5.jpg",
   "/images/kitchen.jpg",
-  "/images/commercial-dental.jpg",
+  "/images/hero-hidden-woods.jpg",
 ];
 
 export function Hero() {
@@ -189,7 +194,7 @@ export function Hero() {
               {[
                 {
                   src: "/images/maple/12.jpg",
-                  caption: "1348 Maple",
+                  caption: "1348 Maple Chase",
                 },
                 {
                   src: "/images/maple/20.jpg",

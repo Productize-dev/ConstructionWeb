@@ -52,7 +52,8 @@ const menu: {
     href: "/portfolio",
     items: [
       { label: "All projects", href: "/portfolio", note: "Residential, development, commercial" },
-      { label: "1348 Maple", href: "/portfolio/1348-maple", note: "Luxury Homes Division" },
+      { label: "1348 Maple Chase Lane", href: "/portfolio/1348-maple", note: "Brookberry" },
+      { label: "Hidden Woods Village", href: "/portfolio/hidden-woods", note: "221, 223, 224, 229 Timber Hill Court" },
     ],
   },
   {
@@ -150,7 +151,7 @@ export function Nav() {
                   />
                 </button>
                 {open === entry.label && (
-                  <div className="absolute top-full left-0 w-72 pt-2">
+                  <div className="absolute top-full left-0 w-80 pt-2">
                     <div className="border border-line bg-paper p-2 shadow-sm">
                       {entry.items.map((item) => (
                         <Link

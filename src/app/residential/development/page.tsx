@@ -90,6 +90,14 @@ export default function ResidentialDevelopmentPage() {
               four-bedroom homes, a defined start, and a builder who is on the
               site instead of coordinating from a distance.
             </p>
+            <p className="mt-5">
+              <Link
+                href="/portfolio/hidden-woods"
+                className="text-sm font-semibold text-navy hover:text-pink"
+              >
+                See 221, 223, 224, and 229 Timber Hill Court
+              </Link>
+            </p>
           </Reveal>
         </div>
       </section>

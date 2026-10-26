@@ -5,18 +5,19 @@ import { Nav } from "@/components/site/nav";
 import { Footer } from "@/components/site/footer";
 import { PageCta } from "@/components/site/page-intro";
 import { Button } from "@/components/ui/button";
-import { maplePhotos, mapleVideoId } from "@/lib/maple";
+import { VideoGrid } from "@/components/site/video-grid";
+import { maplePhotos, mapleStagingPhotos, mapleVideos } from "@/lib/maple";
 
 export const metadata: Metadata = {
-  title: "1348 Maple | J&L Construction",
+  title: "1348 Maple Chase Lane | J&L Construction",
   description:
-    "1348 Maple, a luxury home by J&L Construction's Luxury Homes Division. Exterior, interiors, screened porch, and a video of the work.",
+    "1348 Maple Chase Lane in Brookberry, a luxury home by J&L Construction. Finished photography, virtual staging, and construction video.",
 };
 
 const facts = [
-  { label: "Project", value: "1348 Maple" },
+  { label: "Address", value: "1348 Maple Chase Lane" },
+  { label: "Community", value: "Brookberry" },
   { label: "Division", value: "Luxury homes" },
-  { label: "Type", value: "Custom residence" },
   { label: "Garage", value: "Two-car" },
 ];
 
@@ -39,7 +40,7 @@ export default function MaplePage() {
               Portfolio · Luxury Homes Division
             </p>
             <h1 className="mt-3 text-[clamp(2.4rem,5vw,4rem)] leading-[0.95] font-semibold tracking-tight text-navy">
-              1348 Maple
+              1348 Maple Chase Lane
             </h1>
             <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-ink-soft">
               Brick and white board-and-batten, black windows, and a two-car
@@ -108,24 +109,16 @@ export default function MaplePage() {
               On the job
             </p>
             <h2 className="mt-3 text-2xl font-semibold text-navy">
-              A look at the work.
+              Construction and virtual staging.
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-              Footage from J&amp;L Construction. The stills below are the
-              finished residence at 1348 Maple.
+              The construction video and the virtual staging video for 1348
+              Maple Chase Lane. The photographs below are the finished house,
+              then the staged interiors.
             </p>
           </div>
           <div className="lg:col-span-8">
-            <div className="relative aspect-video overflow-hidden bg-navy">
-              <iframe
-                src={`https://www.youtube-nocookie.com/embed/${mapleVideoId}`}
-                title="J&L Construction video"
-                className="absolute inset-0 h-full w-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              />
-            </div>
+            <VideoGrid videos={mapleVideos} title="1348 Maple Chase Lane" />
           </div>
         </div>
       </section>
@@ -153,6 +146,44 @@ export default function MaplePage() {
                   alt={photo.alt}
                   fill
                   sizes={index === 0 ? "(min-width: 1024px) 50vw, 100vw" : "(min-width: 1024px) 25vw, 50vw"}
+                  className="object-cover"
+                />
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="staging" className="border-t border-line bg-offwhite py-8 md:py-10">
+        <div className="container">
+          <div className="mb-4 flex items-end justify-between gap-4">
+            <div>
+              <p className="text-[11px] font-semibold tracking-[0.18em] text-pink uppercase">
+                Virtual staging
+              </p>
+              <h2 className="mt-2 text-lg font-semibold text-navy">
+                Furnished interiors
+              </h2>
+            </div>
+            <p className="text-[11px] tracking-[0.14em] text-ink-soft uppercase">
+              {mapleStagingPhotos.length} photographs
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-1.5 md:grid-cols-3">
+            {mapleStagingPhotos.map((photo, index) => (
+              <figure
+                key={photo.src}
+                className={
+                  index === 0
+                    ? "relative col-span-2 aspect-[16/9] overflow-hidden bg-navy-deep md:col-span-2"
+                    : "relative aspect-[16/9] overflow-hidden bg-navy-deep"
+                }
+              >
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  sizes={index === 0 ? "(min-width: 768px) 66vw, 100vw" : "(min-width: 768px) 33vw, 50vw"}
                   className="object-cover"
                 />
               </figure>

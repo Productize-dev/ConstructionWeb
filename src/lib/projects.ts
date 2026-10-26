@@ -11,13 +11,20 @@ export type Project = {
 export const projects: Project[] = [
   {
     src: "/images/maple/01.jpg",
-    name: "1348 Maple",
-    place: "Luxury Homes Division",
+    name: "1348 Maple Chase Lane",
+    place: "Brookberry",
     category: "Residential",
     href: "/portfolio/1348-maple",
   },
   {
-    src: "/images/hero-house.png",
+    src: "/images/hidden-woods/223/01.jpg",
+    name: "Hidden Woods Village",
+    place: "Timber Hill Court",
+    category: "Development",
+    href: "/portfolio/hidden-woods",
+  },
+  {
+    src: "/images/hero-house.jpg",
     name: "Custom farmhouse",
     place: "Winston-Salem, NC",
     category: "Residential",
@@ -75,18 +82,50 @@ export const projects: Project[] = [
     name: "Community home",
     place: "Hidden Woods Village",
     category: "Development",
+    href: "/portfolio/hidden-woods",
   },
   {
     src: "/images/hero-hidden-woods.jpg",
     name: "Hidden Woods Village",
     place: "Piedmont Triad, NC",
     category: "Development",
+    href: "/portfolio/hidden-woods",
   },
   {
     src: "/images/commercial-dental.jpg",
     name: "Dental office",
     place: "Piedmont Triad, NC",
     category: "Commercial",
+  },
+  {
+    src: "/images/residence-front.jpg",
+    name: "Front elevation",
+    place: "Piedmont Triad, NC",
+    category: "Residential",
+  },
+  {
+    src: "/images/residence-side.jpg",
+    name: "Side elevation",
+    place: "Piedmont Triad, NC",
+    category: "Residential",
+  },
+  {
+    src: "/images/residence-rear.jpg",
+    name: "Rear elevation",
+    place: "Piedmont Triad, NC",
+    category: "Residential",
+  },
+  {
+    src: "/images/living-01.jpg",
+    name: "Living room",
+    place: "Piedmont Triad, NC",
+    category: "Residential",
+  },
+  {
+    src: "/images/living-02.jpg",
+    name: "Living room",
+    place: "Piedmont Triad, NC",
+    category: "Residential",
   },
 ];
 
